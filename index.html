@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Movie app</title>
+</head>
+
+<body>
+    <!-- LOADER SPINNER -->
+    <span class="loader"></span>
+
+    <!-- ASIDE NAV Section -->
+    <aside class="d-flex  position-fixed z-3 min-vh-100">
+        <div class="side-nav bg-black fs-4 text-white -flex flex-column justify-content-between">
+            <div class="nav-links p-2">
+                <ul class="list-unstyled ">
+                    <li onclick="getMoviData(); toggleNav()" class="white-space my-4 pt-1">Now playing</li>
+                    <li onclick="getPopular(); toggleNav()" class="my-4 pt-1">Popular</li>
+                    <li onclick="getTopRated(); toggleNav()" class="my-4 pt-1">Top Rated</li>
+                    <li onclick="getTrending(); toggleNav()" class="my-4 pt-1">Trending</li>
+                    <li onclick="getUpComing(); toggleNav()" class="my-4 pt-1">Upcoming</li>
+                    <li onclick="contact(); toggleNav()" class="my-4 pt-1">Contact Us</li>
+                </ul>
+            </div>
+
+            <div class="footer p-2">
+                <div class="social-icons ">
+                    <i class="fa-brands fa-facebook px-2 cursor"></i>
+                    <i class="fa-brands fa-twitter px-2 cursor"></i>
+                    <i class="fa-solid fa-globe px-2 cursor"></i>
+                </div>
+                <p class="fs-5 white-space">Copyright Â© 2024 All Rights <br> Reserved.</p>
+                <p class="fs-5">Created by <a class="link-underline  text-white cursor" href="">Mohamed
+                        mahmoud</a></p>
+            </div>
+        </div>
+        <div class="nav-header bg-white p-2  d-flex flex-column justify-content-between text-center">
+            <div class="nav-logo my-3">
+                <img class="w-100 bg-danger" src="css/imgs/images.jpeg" alt="logo">
+            </div>
+            <div class="open-close-icon">
+                <i  class="d-none barsSign fa-solid fa-bars fs-1 cursor"></i>
+                <i class=" xSign fa-solid fa-xmark fs-1 cursor"></i>
+            </div>
+            <div class="d-flex flex-column my-4">
+                <i class="fa-solid fa-globe"></i>
+                <i class="fa-solid fa-share-nodes pt-2"></i>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Home Section -->
+    <section class="home py-5">
+        <input onkeyup="searchData(this.value)" class="form-control w-50 mx-auto bg-transparent rounded-pill text-white shadow-none border-white p-3"
+            type="search">
+        <div class="container mt-5">
+            <div class="row g-5 rowData">
+                <!-- <img src="/Bf3vCfM94bSJ1saZlyi0UW0e0U.jpg" alt=""> -->
+
+            </div>
+            <div class="row mt-5" id="contact">
+                <h2 class="text-white">Contact Us</h2>
+                
+                <div class="col-md-6 col-sm-12">
+                    <input oninput="validateName(this.value)"  type="text" required="" id="name" maxlength="37" class="form-control mt-4" placeholder="Enter Your Name">
+                    <label id="nameLabel" class="text-danger d-none" for="name">Invalid Name, only characters Allowed</label>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <input oninput="validatEmail(this.value)" type="email" required="" id="email" maxlength="37" class="form-control mt-4" placeholder="Enter Your Email">
+                    <label id="emailLabel" class="text-danger d-none" for="email">Invalid email, try example@domain.com</label>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <input oninput="validatNumber(this.value)" type="number" required="" id="phone" maxlength="37" class="form-control mt-4" placeholder="Enter Your Phone">
+                    <label id="phoneLabel" class="text-danger d-none" for="phone">Invalid phone Number</label>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <input oninput="validatAge(this.value)" type="number" required="" id="age" maxlength="37" class="form-control mt-4" placeholder="Enter Your Age">
+                    <label id="ageLabel" class="text-danger d-none" for="age">Invalid age must be over +16</label>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <input oninput="validatPass(this.value)" type="password" required="" id="password" maxlength="37" class="form-control mt-4" placeholder="Enter Your Password">
+                    <label id="passwordLabel" class="text-danger d-none" for="password">Must contain numbers & letters at least 8 characters</label>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <input  oninput="validatRePass(this.value)" type="password" required="" id="rePassword" maxlength="37" class="form-control mt-4" placeholder="ReEnter Password">
+                    <label id="rePasswordLabel" class="text-danger d-none" for="rePassword">password not match</label>
+                </div>
+            </div>
+            <button class="submitBtn mt-3 py-2 px-4 text-white bg-black border rounded-3" type="submit">Submit</button>
+
+        </div>
+    </section>
+    <div class="scroll  d-none">
+        <i class="cursor fs-5 p-2 fa-solid fa-arrow-up-long"></i>
+
+    </div>
+    <script  src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
