@@ -117,7 +117,10 @@ aside .side-nav .nav-links ul li:hover{
     border: none !important;
     border-bottom: 1px solid #fff !important;
 }
-
+.footer .my-name{
+    text-decoration: none;
+    color: rgb(94, 255, 0) !important;
+}
 
 
 
@@ -127,4 +130,14 @@ aside .side-nav .nav-links ul li:hover{
 }
 .white-space{
     white-space: nowrap;
+}
+
+@media screen and (max-width: 920px) { 
+    .nav-header{
+        background-color: transparent !important;
+        color: white !important;
+    }
+    .nav-logo ,.icons{
+        visibility: hidden;
+    }
 }

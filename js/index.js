@@ -148,18 +148,20 @@ function scrollFun() {
 function validateName(name) {
     // '+' equal {1,} equal one or more 
     let regex = /^[a-z]+$/ig;
-    if (regex.test(name)) {
+    if (regex.test(name) || name == "") {
         $('#nameLabel').addClass('d-none');
     }
     else {
         $('#nameLabel').removeClass('d-none');
+
     }
+
 }
 // validateName();
 //------------------------------------------------------------------------------------------
 function validatEmail(email) {
     let regexEmail = /^[a-z]+[@][a-z]+\.com$/gi;
-    if (regexEmail.test(email)) {
+    if (regexEmail.test(email) || email == "") {
         $('#emailLabel').addClass('d-none');
     }
     else {
@@ -169,7 +171,7 @@ function validatEmail(email) {
 //------------------------------------------------------------------------------------------
 function validatNumber(number) {
     let phone = /^01[0125][0-9]{8}$/gi;
-    if (phone.test(number)) {
+    if (phone.test(number) || number == "") {
         $('#phoneLabel').addClass('d-none');
     }
     else {
@@ -179,11 +181,11 @@ function validatNumber(number) {
 
 //------------------------------------------------------------------------------------------
 function validatAge(age) {
-    if (age < 15) {
-        $('#ageLabel').removeClass('d-none');
+    if (age > 15 || age == "") {
+        $('#ageLabel').addClass('d-none');
     }
     else {
-        $('#ageLabel').addClass('d-none');
+        $('#ageLabel').removeClass('d-none');
 
     }
 
@@ -191,7 +193,7 @@ function validatAge(age) {
 //------------------------------------------------------------------------------------------
 function validatPass(password) {
     let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/;
-    if (regex.test(password)) {
+    if (regex.test(password) || password == "") {
         $('#passwordLabel').addClass('d-none');
     }
     else {
